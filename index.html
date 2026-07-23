@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velora-mart</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="download.jpeg">
+  <style>
+  
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="logo">🛒 Veloramart</a>
+    
+    <ul class="nav-links">
+      <li><a href="#">Deals</a></li>
+      <li><a href="#">What's New</a></li>
+      <li><a href="#">Delivery</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search product...">
+      </div>
+
+      <!-- THEME TOGGLE BUTTON -->
+      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark Mode">
+        🌙
+      </button>
+
+      <button id="cart-trigger" class="cart-trigger">
+        Cart <span id="cart-count" class="cart-badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <div class="hero-card">
+      <div class="hero-content">
+        <h1 class="hero-title">Explore Our Premier Collection</h1>
+        <button class="btn-primary">Shop Collection</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMIC CATEGORY PILLS -->
+  <section class="filter-section">
+    <div class="pill-group" id="category-pills">
+      <button class="pill-btn active" onclick="filterCategory('all', this)">All Products</button>
+      <button class="pill-btn" onclick="filterCategory('beauty', this)">Beauty</button>
+      <button class="pill-btn" onclick="filterCategory('fragrances', this)">Fragrances</button>
+      <button class="pill-btn" onclick="filterCategory('furniture', this)">Furniture</button>
+      <button class="pill-btn" onclick="filterCategory('groceries', this)">Groceries</button>
+    </div>
+  </section>
+
+  <!-- CATALOG GRID -->
+  <main class="catalog-container">
+    <h2 class="section-title" id="catalog-heading">Explore Products</h2>
+    <div id="product-grid" class="product-grid"></div>
+  </main>
+
+  <!-- CART DRAWER -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <aside id="cart-drawer" class="drawer">
+    <div class="drawer-header">
+      <h3>Your Shopping Cart</h3>
+      <button id="close-drawer" class="close-btn">&times;</button>
+    </div>
+    <div id="cart-body" class="drawer-body"></div>
+    <div class="drawer-footer">
+      <div class="total-row">
+        <span>Subtotal</span>
+        <strong id="cart-total">$0.00</strong>
+      </div>
+      <button class="btn-primary" style="width: 100%;" onclick="alert('Order successfully placed!')">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- JAVASCRIPT ENGINE -->
+  <script src="script.js"></script>
+</body>
+</html>
