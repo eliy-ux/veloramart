@@ -1,88 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velora-mart</title>
+  <meta name="description" content="Velora Mart — considered essentials, delivered with care.">
+  <title>Velora Mart — Everyday, elevated</title>
+  <link rel="icon" type="image/jpeg" href="download.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="download.jpeg">
-  <style>
-  
-  </style>
 </head>
 <body>
-
-  <!-- NAVBAR -->
+  <div class="announcement"><span>Free delivery on orders over $50</span><span class="announcement-detail">Easy returns within 30 days</span></div>
   <header class="navbar">
-    <a href="#" class="logo">🛒 Veloramart</a>
-    
-    <ul class="nav-links">
-      <li><a href="#">Deals</a></li>
-      <li><a href="#">What's New</a></li>
-      <li><a href="#">Delivery</a></li>
-    </ul>
-
+    <a class="logo" href="#top" aria-label="Velora Mart home"><span class="logo-mark">V</span><span>velora<span class="logo-accent">mart</span></span></a>
+    <nav class="nav-links" aria-label="Primary navigation"><a href="#catalog">Shop</a><a href="#categories">Collections</a><a href="#why-velora">Why Velora</a></nav>
     <div class="nav-actions">
-      <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Search product...">
-      </div>
-
-      <!-- THEME TOGGLE BUTTON -->
-      <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark Mode">
-        🌙
-      </button>
-
-      <button id="cart-trigger" class="cart-trigger">
-        Cart <span id="cart-count" class="cart-badge">0</span>
-      </button>
+      <label class="search-bar" for="search-input"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search products" autocomplete="off"><kbd>⌘ K</kbd></label>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to dark mode" title="Toggle theme">☼</button>
+      <button id="cart-trigger" class="cart-trigger" type="button" aria-label="Open cart">Cart <span id="cart-count" class="cart-badge">0</span></button>
     </div>
   </header>
-
-  <!-- HERO BANNER -->
-  <section class="hero">
-    <div class="hero-card">
-      <div class="hero-content">
-        <h1 class="hero-title">Explore Our Premier Collection</h1>
-        <button class="btn-primary">Shop Collection</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- DYNAMIC CATEGORY PILLS -->
-  <section class="filter-section">
-    <div class="pill-group" id="category-pills">
-      <button class="pill-btn active" onclick="filterCategory('all', this)">All Products</button>
-      <button class="pill-btn" onclick="filterCategory('beauty', this)">Beauty</button>
-      <button class="pill-btn" onclick="filterCategory('fragrances', this)">Fragrances</button>
-      <button class="pill-btn" onclick="filterCategory('furniture', this)">Furniture</button>
-      <button class="pill-btn" onclick="filterCategory('groceries', this)">Groceries</button>
-    </div>
-  </section>
-
-  <!-- CATALOG GRID -->
-  <main class="catalog-container">
-    <h2 class="section-title" id="catalog-heading">Explore Products</h2>
-    <div id="product-grid" class="product-grid"></div>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-card"><div class="hero-content"><p class="eyebrow">THE EVERYDAY EDIT</p><h1 id="hero-title">Good things,<br><em>beautifully chosen.</em></h1><p class="hero-copy">Thoughtful essentials for your home, your routine, and everywhere in between.</p><button class="btn-primary" id="shop-collection" type="button">Explore collection <span>→</span></button></div><div class="hero-art" aria-hidden="true"><div class="art-orb orb-one"></div><div class="art-orb orb-two"></div><div class="art-card"><span>VELORA</span><strong>Live<br>beautifully.</strong><small>CURATED / 2026</small></div></div></div>
+    </section>
+    <section class="trust-row" id="why-velora" aria-label="Velora benefits"><div><strong>01</strong><span>Curated quality<br><small>Chosen with intention</small></span></div><div><strong>02</strong><span>Fast delivery<br><small>At your doorstep, sooner</small></span></div><div><strong>03</strong><span>Simple returns<br><small>Shop with confidence</small></span></div></section>
+    <section class="catalog-shell" id="catalog" aria-labelledby="catalog-heading">
+      <div class="catalog-top"><div><p class="eyebrow">FIND YOUR NEXT FAVORITE</p><h2 id="catalog-heading">Explore products</h2><p id="result-summary" class="result-summary">Loading our collection…</p></div><div class="sort-wrap"><label for="sort-select">Sort by</label><select id="sort-select"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option></select></div></div>
+      <div class="category-row" id="categories" role="tablist" aria-label="Product categories"><button class="pill-btn active" data-category="all" role="tab" aria-selected="true">All products</button><button class="pill-btn" data-category="beauty" role="tab" aria-selected="false">Beauty</button><button class="pill-btn" data-category="fragrances" role="tab" aria-selected="false">Fragrances</button><button class="pill-btn" data-category="furniture" role="tab" aria-selected="false">Furniture</button><button class="pill-btn" data-category="groceries" role="tab" aria-selected="false">Groceries</button></div>
+      <div id="product-grid" class="product-grid" aria-live="polite"></div>
+    </section>
   </main>
-
-  <!-- CART DRAWER -->
+  <footer><div class="footer-logo"><span class="logo-mark">V</span><span>velora<span class="logo-accent">mart</span></span></div><p>Everyday, elevated.</p><span>© 2026 Velora Mart</span></footer>
   <div id="drawer-backdrop" class="drawer-backdrop"></div>
-  <aside id="cart-drawer" class="drawer">
-    <div class="drawer-header">
-      <h3>Your Shopping Cart</h3>
-      <button id="close-drawer" class="close-btn">&times;</button>
-    </div>
-    <div id="cart-body" class="drawer-body"></div>
-    <div class="drawer-footer">
-      <div class="total-row">
-        <span>Subtotal</span>
-        <strong id="cart-total">$0.00</strong>
-      </div>
-      <button class="btn-primary" style="width: 100%;" onclick="alert('Order successfully placed!')">Proceed to Checkout</button>
-    </div>
-  </aside>
-
-  <!-- JAVASCRIPT ENGINE -->
+  <aside id="cart-drawer" class="drawer" aria-labelledby="cart-title" aria-hidden="true"><div class="drawer-header"><div><p class="eyebrow">YOUR SELECTION</p><h3 id="cart-title">Shopping cart</h3></div><button id="close-drawer" class="close-btn" type="button" aria-label="Close cart">×</button></div><div id="cart-body" class="drawer-body"></div><div class="drawer-footer"><div class="shipping-note" id="shipping-note"></div><div class="total-row"><span>Subtotal</span><strong id="cart-total">$0.00</strong></div><button id="checkout-btn" class="btn-primary checkout-btn" type="button">Proceed to checkout <span>→</span></button><p class="secure-note">Secure checkout · Taxes calculated at checkout</p></div></aside>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
